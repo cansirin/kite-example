@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/server-browser.js"],"names":["KiteServer"],"mappings":";;;;;AAAe,MAAMA,UAAN,CAAiB;kBAAXA,U","file":"server-browser.js","sourcesContent":["export default class KiteServer {}\n"]}

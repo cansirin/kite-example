@@ -1,0 +1,31 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+class Delayed {
+  constructor(fn, ms, ...params) {
+    this.fn = fn;
+    this.ms = ms;
+    this.params = Array.from(params);
+    Delayed.handles.push(this);
+    this.begin();
+  }
+
+  static clearAll() {
+    this.handles.forEach(h => h.clear());
+    return this.handles.length = 0;
+  }
+}
+
+const mustOverride = () => {
+  throw new Error('not implemented');
+};
+
+Delayed.handles = [];
+Delayed.prototype.begin = mustOverride;
+Delayed.prototype.clear = mustOverride;
+
+exports.default = Delayed;
+module.exports = exports['default'];
+//# sourceMappingURL=delayed.js.map
